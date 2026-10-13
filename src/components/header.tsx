@@ -1,0 +1,6 @@
+'use client';
+import Link from 'next/link';
+import { useState } from 'react';
+import { Menu, X, ArrowUpLeft, AudioLines } from 'lucide-react';
+export function Brand() { return <Link href="/" className="brand" aria-label="بلوتل، صفحه اصلی"><span className="brand-symbol"><AudioLines size={25}/></span><span>Bulut<span className="brand-tel">Tel</span><small>بلوتل؛ ارتباط بدون مرز</small></span></Link> }
+export function Header(){ const [open,setOpen]=useState(false); return <header className="header"><div className="container header-inner"><Brand/><nav aria-label="منوی اصلی" className={open?'navigation open':'navigation'}><Link href="/cloud-telephony/" onClick={()=>setOpen(false)}>تلفن ابری چیست؟</Link><Link href="/features/" onClick={()=>setOpen(false)}>امکانات</Link><Link href="/solutions/" onClick={()=>setOpen(false)}>راهکارها</Link><Link href="/pricing/" onClick={()=>setOpen(false)}>تعرفه‌ها</Link><Link href="/blog/" onClick={()=>setOpen(false)}>مجله بلوتل</Link></nav><Link className="button small header-cta" href="/contact/">درخواست مشاوره <ArrowUpLeft size={16}/></Link><button className="menu-toggle" aria-label={open?'بستن منو':'باز کردن منو'} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button></div></header> }
