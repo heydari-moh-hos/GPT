@@ -1,7 +1,415 @@
-import Link from 'next/link';
-import { ArrowUpLeft, ArrowLeft, Cloud, Headphones, Building2, Globe2, Phone, AudioLines, ShieldCheck, Network, SlidersHorizontal, BookOpen, Check, Sparkles } from 'lucide-react';
-import { metadata, JsonLd } from '@/lib/seo';
-import { articles, site } from '@/lib/content';
-export const generateMetadata=()=>metadata('تلفن ابری و راهکارهای ارتباطی سازمانی','با بلوتل، تلفن ابری و Cloud PBX را بشناسید؛ راهنمای انتخاب، امکانات رایج، هزینه‌ها و راهکارهای ارتباطی برای تیم‌های فروش و پشتیبانی.');
-const capabilities=[{icon:Network,title:'پاسخ‌گویی منظم‌تر',body:'آشنایی با مسیر تماس، داخلی‌ها و صف پاسخ‌گویی برای هدایت بهتر تماس‌های ورودی.',href:'/cloud-pbx/'},{icon:Globe2,title:'ارتباط فراتر از دفتر',body:'بررسی نیازهای ارتباطی تیم‌های دورکار و شعب، با توجه به کیفیت شبکه و امنیت.',href:'/solutions/'},{icon:SlidersHorizontal,title:'مدیریت متناسب با نیاز',body:'شناخت ابزارهای رایج و انتخاب قابلیت‌هایی که به کار تیم شما می‌آیند.',href:'/features/'}];
-export default function Home(){return <><JsonLd data={{'@context':'https://schema.org','@type':'Organization',name:site.name,alternateName:'BulutTel',url:site.url}}/><section className="hero"><div className="hero-grid-background"/><div className="container hero-grid"><div className="hero-copy"><span className="pill"><span className="status-dot"/> آینده ارتباطات، همین‌جاست</span><h1>ارتباط کسب‌وکار شما،<br/><span>فراتر از یک خط تلفن.</span></h1><p>با تلفن ابری، شیوه تازه‌ای از ارتباط را بشناسید.<br/>راهنمای بلوتل برای انتخاب و طراحی ارتباطات یکپارچه،<br className="desktop-break"/> از اولین تماس تا پاسخ‌گویی تیم شما.</p><div className="hero-actions"><Link className="button" href="/contact/">درخواست مشاوره <ArrowUpLeft size={20}/></Link><Link className="button secondary" href="/cloud-telephony/">آشنایی با تلفن ابری <ArrowLeft size={18}/></Link></div><div className="hero-footnote"><ShieldCheck size={17}/><span>شفاف در معرفی؛ همراه شما در انتخاب آگاهانه</span></div></div><div className="hero-visual" role="img" aria-label="نمای مفهومی اتصال دفتر، تیم دورکار و پشتیبانی به مرکز تلفن ابری؛ تصویر محصول واقعی نیست"><div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="cloud-core"><Cloud size={58} strokeWidth={1.6}/><span dir="ltr">BulutTel</span><small>مرکز ارتباط ابری</small></div><div className="connection-node node-office"><Building2/><div><strong>دفتر مرکزی</strong><small>یک شبکه، یک تیم</small></div><span className="node-dot"/></div><div className="connection-node node-remote"><Globe2/><div><strong>تیم دورکار</strong><small>ارتباط از هر مکان</small></div></div><div className="connection-node node-support"><Headphones/><div><strong>تیم پشتیبانی</strong><small>مسیر روشن پاسخ‌گویی</small></div><span className="node-dot"/></div><div className="call-card"><div className="call-card-top"><span className="phone-circle"><Phone size={18}/></span><span>ارتباط یکپارچه<strong>از تماس تا همراهی</strong></span><AudioLines className="call-wave" size={36}/></div><div className="wave-bars">{Array.from({length:32},(_,i)=><span key={i} style={{height:`${10+((i*17)%31)}px`}}/>)}</div><small>تصویر مفهومی · امکانات محصول نیازمند تأیید</small></div><span className="visual-spark"><Sparkles size={20}/></span></div></div></section><section className="intro-strip"><div className="container"><span>ارتباطی که با شیوه کار شما هماهنگ می‌شود</span><div><span><Building2 size={20}/> کسب‌وکارهای در حال رشد</span><span><Headphones size={20}/> تیم‌های فروش و پشتیبانی</span><span><Globe2 size={20}/> سازمان‌های چندشعبه‌ای</span></div></div></section><section className="section container"><div className="section-heading"><div><span className="eyebrow">زیرساخت ابری، نگاه انسانی</span><h2>تماس‌ها به هم متصل می‌شوند.<br/>تیم‌ها هم همین‌طور.</h2></div><p>تلفن ابری فقط یک ابزار نیست؛ فرصتی برای بازطراحی مسیر ارتباط با مشتری است. از شناخت نیازها شروع کنید.</p></div><div className="feature-grid">{capabilities.map((c,i)=><Link className="feature-card" key={c.title} href={c.href}><div className={`icon-box icon-${i}`}><c.icon size={25}/></div><span className="card-number">۰{i+1}</span><h3>{c.title}</h3><p>{c.body}</p><span className="text-link">بیشتر بدانید <ArrowUpLeft size={18}/></span></Link>)}</div><p className="product-note">این موارد کاربردهای عمومی فناوری هستند؛ مشخصات و امکانات بلوتل پس از تأیید منتشر می‌شوند.</p></section><section className="section solution-section"><div className="container solution-grid"><div className="solution-visual"><div className="mini-label"><span className="status-dot"/> یک مسیر برای هر تماس</div><div className="flow-start"><Phone size={23}/><strong>تماس ورودی</strong></div><div className="flow-line"/><div className="flow-center"><AudioLines size={24}/><span>مرکز تلفن ابری</span></div><div className="flow-branches"><span>فروش</span><span>پشتیبانی</span><span>سایر بخش‌ها</span></div><p>طرح مفهومی مسیریابی تماس</p></div><div><span className="eyebrow">متناسب با مسیر رشد شما</span><h2>یک تیم، چند مکان.<br/>یک تجربه ارتباطی منسجم.</h2><p className="section-description">چه در یک دفتر کار می‌کنید و چه در چند شعبه، طراحی درست ارتباطات از شناخت جریان تماس‌ها شروع می‌شود.</p><ul className="check-list"><li><Check size={17}/> بررسی سناریوهای فروش و پشتیبانی</li><li><Check size={17}/> برنامه‌ریزی برای دورکاری و شعب</li><li><Check size={17}/> ارزیابی کیفیت، امنیت و تداوم خدمت</li></ul><Link className="text-link" href="/solutions/">کشف راهکارهای سازمانی <ArrowUpLeft size={20}/></Link></div></div></section><section className="section container steps-section"><div className="center-heading"><span className="eyebrow">از سؤال تا انتخاب</span><h2>مسیر ساده‌تر برای تصمیمی دقیق‌تر</h2><p>قبل از خرید، این سه قدم را با تیم خود مرور کنید.</p></div><div className="steps-grid">{[{n:'۰۱',title:'نیازتان را بشناسید',body:'تعداد کاربران، تماس‌های هم‌زمان و چالش‌های پاسخ‌گویی را مشخص کنید.',href:'/buy-cloud-phone/'},{n:'۰۲',title:'گزینه‌ها را بسنجید',body:'امکانات، کیفیت شبکه و تعهدات پشتیبانی را با یک معیار مشترک مقایسه کنید.',href:'/features/'},{n:'۰۳',title:'هزینه‌ها را شفاف کنید',body:'آبونمان، مکالمه و خدمات افزوده را در هزینه کل سرویس در نظر بگیرید.',href:'/pricing/'}].map(s=><Link className="step" href={s.href} key={s.n}><span>{s.n}</span><h3>{s.title}</h3><p>{s.body}</p></Link>)}</div></section><section className="section container journal-section"><div className="section-heading"><div><span className="eyebrow">مجله بلوتل</span><h2>برای ارتباط بهتر، بیشتر بدانید.</h2></div><Link className="text-link" href="/blog/">همه مقاله‌ها <ArrowUpLeft size={18}/></Link></div><div className="article-cards">{articles.map((a,i)=><Link href={`/blog/${a.slug}/`} className="article-card" key={a.slug}><div className={`article-art art-${i}`}>{i===0?<Network size={45}/>:i===1?<AudioLines size={45}/>:<BookOpen size={45}/>}<span>دانش ارتباطات / ۰{i+1}</span></div><div className="article-card-body"><span className="eyebrow">{a.eyebrow}</span><h3>{a.title}</h3><span className="text-link">مطالعه مقاله <ArrowUpLeft size={17}/></span></div></Link>)}</div></section><section className="container cta-section"><div className="cta-icon"><Cloud size={50}/></div><div><span className="eyebrow">قدم بعدی را آگاهانه بردارید</span><h2>ارتباط بهتر، از یک گفت‌وگو شروع می‌شود.</h2><p>نیازهای تیم‌تان را مشخص کنید و با مسیر مشاوره بلوتل آشنا شوید.</p></div><Link className="button white" href="/contact/">بررسی مسیر مشاوره <ArrowUpLeft size={19}/></Link><small>مسیر دریافت درخواست در انتظار فعال‌سازی است.</small></section></>}
+import Link from "next/link";
+import {
+  ArrowUpLeft,
+  ArrowLeft,
+  Cloud,
+  Headphones,
+  Building2,
+  Globe2,
+  PhoneIncoming,
+  Network,
+  ShieldCheck,
+  GitBranch,
+  AudioLines,
+  MoveUpRight,
+  Check,
+  Layers3,
+  Wallet,
+  BookOpen,
+} from "lucide-react";
+import { metadata, JsonLd } from "@/lib/seo";
+import { articles, site } from "@/lib/content";
+import { CallConsole, VoiceWave } from "@/components/call-console";
+import { Reveal } from "@/components/reveal";
+import { ScenarioExplorer } from "@/components/scenario-explorer";
+export const generateMetadata = () =>
+  metadata(
+    "تلفن ابری و راهکارهای ارتباطی سازمانی",
+    "با بلوتل، تلفن ابری و Cloud PBX را بشناسید؛ راهنمای انتخاب، امکانات رایج، هزینه‌ها و راهکارهای ارتباطی برای تیم‌های فروش و پشتیبانی.",
+  );
+export default function Home() {
+  return (
+    <div className="redesign">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: site.name,
+          alternateName: "BulutTel",
+          url: site.url,
+        }}
+      />
+      <section className="v-hero">
+        <div className="v-hero-grid" aria-hidden="true" />
+        <div className="container v-hero-layout">
+          <div className="v-hero-copy">
+            <span className="v-kicker">
+              <i /> CLOUD TELEPHONY, HUMAN CONNECTION
+            </span>
+            <h1>
+              هر تماس،
+              <br />
+              شروع یک <span>ارتباط.</span>
+            </h1>
+            <p>
+              تلفن ابری، فراتر از یک خط تلفن.
+              <br />
+              با بلوتل، مسیر ارتباط تیم و مشتری را بشناسید؛ از تماس ورودی تا
+              پاسخ درست.
+            </p>
+            <div className="v-actions">
+              <Link className="v-button" href="/contact/">
+                مسیر مشاوره بلوتل <ArrowUpLeft size={20} />
+              </Link>
+              <Link className="v-button v-ghost" href="/cloud-telephony/">
+                تلفن ابری چیست؟ <ArrowLeft size={18} />
+              </Link>
+            </div>
+            <div className="v-hero-note">
+              <ShieldCheck size={16} />
+              <span>انتخاب آگاهانه، با اطلاعات روشن و قابل بررسی</span>
+            </div>
+          </div>
+          <CallConsole />
+        </div>
+        <div className="container hero-bottom-line">
+          <span>ارتباط ابری. نگاه یکپارچه.</span>
+          <div>
+            <span>
+              <Building2 size={15} /> دفتر
+            </span>
+            <b>+</b>
+            <span>
+              <Globe2 size={15} /> شعب
+            </span>
+            <b>+</b>
+            <span>
+              <Headphones size={15} /> دورکاری
+            </span>
+          </div>
+          <span dir="ltr">BUILT AROUND CONNECTION</span>
+        </div>
+      </section>
+      <section className="v-value container v-section">
+        <Reveal>
+          <div className="v-section-top">
+            <span className="v-kicker blue">۰۱ / نگاه بلوتل</span>
+            <span className="v-side-label">
+              فناوری وقتی ارزش دارد که ارتباط را بهتر کند.
+            </span>
+          </div>
+          <div className="value-layout">
+            <h2>
+              خط‌ها را متصل کنید.
+              <br />
+              <span>ارتباط‌ها را بسازید.</span>
+            </h2>
+            <div>
+              <p className="v-lead">
+                مسئله فقط برقراری تماس نیست؛ مهم این است که مشتری به تیم مناسب
+                برسد و تیم شما مسیر روشنی برای پاسخ‌گویی داشته باشد.
+              </p>
+              <Link className="v-text-link" href="/cloud-pbx/">
+                با مرکز تلفن ابری آشنا شوید <ArrowUpLeft size={19} />
+              </Link>
+            </div>
+          </div>
+          <div className="value-principles">
+            {[
+              {
+                icon: GitBranch,
+                title: "مسیر روشن تماس",
+                body: "از اولین زنگ تا رسیدن به بخش مناسب؛ جریان پاسخ‌گویی را طراحی کنید.",
+              },
+              {
+                icon: Globe2,
+                title: "تیم بدون مرز دفتر",
+                body: "نیازهای شعب و دورکاری را با کیفیت شبکه و امنیت کنار هم بسنجید.",
+              },
+              {
+                icon: Layers3,
+                title: "انتخاب متناسب با شما",
+                body: "امکانات را بر اساس مسئله واقعی تیم انتخاب کنید، نه طول فهرست ویژگی‌ها.",
+              },
+            ].map((v, i) => (
+              <div key={v.title}>
+                <span className="principle-index">۰{i + 1}</span>
+                <v.icon size={27} />
+                <h3>{v.title}</h3>
+                <p>{v.body}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </section>
+      <section className="v-product v-section">
+        <div className="container">
+          <Reveal>
+            <div className="v-section-top">
+              <span className="v-kicker">۰۲ / از مفهوم تا تجربه</span>
+              <span className="v-side-label">نمای مفهومی محصول</span>
+            </div>
+            <div className="product-layout">
+              <div className="product-copy">
+                <h2>
+                  پشت هر پاسخ خوب،
+                  <br />
+                  <span>یک مسیر هوشمندانه است.</span>
+                </h2>
+                <p className="v-lead">
+                  یک سناریو را انتخاب کنید و مسیر پیشنهادی تماس را ببینید. این
+                  نمایش به شناخت نیاز کمک می‌کند؛ مشخصات قطعی بلوتل پس از تأیید
+                  منتشر می‌شوند.
+                </p>
+                <div className="product-detail">
+                  <AudioLines size={26} />
+                  <div>
+                    <h3>صدا، در مرکز تجربه</h3>
+                    <p>
+                      کیفیت شبکه، طراحی مسیر و تجربه اپراتور را در کنار هم
+                      ارزیابی کنید.
+                    </p>
+                  </div>
+                </div>
+                <Link className="v-text-link" href="/features/">
+                  راهنمای امکانات تلفن ابری <ArrowUpLeft size={20} />
+                </Link>
+              </div>
+              <ScenarioExplorer />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+      <section className="v-how v-section container">
+        <Reveal>
+          <div className="v-section-top">
+            <span className="v-kicker blue">۰۳ / مسیر یک تماس</span>
+            <Link className="v-text-link" href="/cloud-telephony/">
+              فناوری به زبان ساده <ArrowUpLeft size={18} />
+            </Link>
+          </div>
+          <h2>
+            از یک زنگ،
+            <br />
+            تا یک پاسخ درست.
+          </h2>
+          <div className="how-track">
+            {[
+              {
+                icon: PhoneIncoming,
+                n: "۰۱",
+                title: "تماس آغاز می‌شود",
+                body: "تماس ورودی به زیرساخت ارتباطی می‌رسد؛ نوع شماره و پوشش به قرارداد سرویس بستگی دارد.",
+              },
+              {
+                icon: Cloud,
+                n: "۰۲",
+                title: "مرکز ابری مسیر می‌دهد",
+                body: "قواعد پاسخ‌گویی و مقصدها در مرکز تلفن مدیریت می‌شوند؛ هر سرویس محدودیت‌های خودش را دارد.",
+              },
+              {
+                icon: Headphones,
+                n: "۰۳",
+                title: "تیم پاسخ می‌دهد",
+                body: "اپراتور با دستگاه سازگار و شبکه پایدار به تماس متصل می‌شود؛ تجربه را در شرایط واقعی بسنجید.",
+              },
+            ].map((s) => (
+              <div className="how-stop" key={s.n}>
+                <div className="how-icon">
+                  <s.icon size={29} />
+                </div>
+                <span>{s.n}</span>
+                <h3>{s.title}</h3>
+                <p>{s.body}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </section>
+      <section className="v-solutions">
+        <div className="container v-section">
+          <Reveal>
+            <div className="solutions-layout">
+              <div>
+                <span className="v-kicker blue">۰۴ / برای شیوه کار شما</span>
+                <h2>
+                  یک نسخه برای
+                  <br />
+                  <span>همه تیم‌ها کافی نیست.</span>
+                </h2>
+                <p className="v-lead">
+                  راهکار ارتباطی از شناخت تیم شروع می‌شود. سناریوی مناسب را پیش
+                  از انتخاب سرویس مشخص کنید.
+                </p>
+                <Link className="v-text-link" href="/solutions/">
+                  همه راهکارهای سازمانی <ArrowUpLeft size={19} />
+                </Link>
+              </div>
+              <div className="solution-list">
+                {[
+                  {
+                    icon: Headphones,
+                    n: "۰۱",
+                    title: "فروش و پشتیبانی",
+                    body: "مسیر مشخص برای تماس مشتری، مسئولیت روشن برای تیم.",
+                  },
+                  {
+                    icon: Building2,
+                    n: "۰۲",
+                    title: "سازمان‌های چندشعبه‌ای",
+                    body: "طراحی یکپارچه ارتباطات با توجه به نیاز هر شعبه.",
+                  },
+                  {
+                    icon: Globe2,
+                    n: "۰۳",
+                    title: "تیم‌های دورکار",
+                    body: "بررسی دسترسی، کیفیت اتصال و تداوم پاسخ‌گویی.",
+                  },
+                ].map((s) => (
+                  <Link href="/solutions/" key={s.title}>
+                    <span className="solution-list-icon">
+                      <s.icon size={24} />
+                    </span>
+                    <div>
+                      <span>{s.n} / سناریوی ارتباطی</span>
+                      <h3>{s.title}</h3>
+                      <p>{s.body}</p>
+                    </div>
+                    <ArrowUpLeft className="solution-arrow" size={24} />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+      <section className="container v-section v-pricing">
+        <Reveal>
+          <div className="pricing-layout">
+            <div className="pricing-heading">
+              <span className="v-kicker blue">۰۵ / تصمیم شفاف</span>
+              <h2>
+                قیمت تنها یک عدد نیست.
+                <br />
+                <span>هزینه کل را ببینید.</span>
+              </h2>
+              <p className="v-lead">
+                آبونمان، مکالمه، ظرفیت و خدمات افزوده را کنار هم بسنجید.
+                تعرفه‌ها و بسته‌های بلوتل در انتظار تأیید هستند.
+              </p>
+              <Link className="v-button" href="/pricing/">
+                راهنمای هزینه و تعرفه‌ها <ArrowUpLeft size={19} />
+              </Link>
+            </div>
+            <div className="cost-sheet">
+              <div className="cost-sheet-header">
+                <Wallet size={25} />
+                <span>چارچوب بررسی هزینه</span>
+                <small>بدون قیمت اعلام‌شده</small>
+              </div>
+              {[
+                "آبونمان و ظرفیت سرویس",
+                "شماره و هزینه مکالمه",
+                "راه‌اندازی و امکانات افزوده",
+              ].map((t, i) => (
+                <div className="cost-line" key={t}>
+                  <span>۰{i + 1}</span>
+                  <strong>{t}</strong>
+                  <Check size={17} />
+                </div>
+              ))}
+              <div className="cost-sheet-bottom">
+                <span>مبنای مقایسه</span>
+                <strong>نیاز واقعی کسب‌وکار شما</strong>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+      <section className="v-journal v-section">
+        <div className="container">
+          <Reveal>
+            <div className="v-section-top">
+              <span className="v-kicker blue">۰۶ / مجله بلوتل</span>
+              <Link className="v-text-link" href="/blog/">
+                همه راهنماها <ArrowUpLeft size={19} />
+              </Link>
+            </div>
+            <h2>
+              دانش بیشتر.
+              <br />
+              <span>انتخاب دقیق‌تر.</span>
+            </h2>
+            <div className="editorial-grid">
+              {articles.map((a, i) => (
+                <Link
+                  href={`/blog/${a.slug}/`}
+                  key={a.slug}
+                  className={`editorial-item editorial-${i}`}
+                >
+                  <div className="editorial-art" aria-hidden="true">
+                    {i === 0 ? (
+                      <>
+                        <Network size={66} />
+                        <div className="editorial-orbit" />
+                        <span>CLOUD / LOCAL</span>
+                      </>
+                    ) : i === 1 ? (
+                      <>
+                        <VoiceWave compact />
+                        <span>VOICE / NETWORK</span>
+                      </>
+                    ) : (
+                      <>
+                        <BookOpen size={60} />
+                        <span>THE BUYER’S GUIDE</span>
+                      </>
+                    )}
+                  </div>
+                  <div className="editorial-body">
+                    <span>{a.eyebrow}</span>
+                    <h3>{a.title}</h3>
+                    <div className="editorial-read">
+                      مطالعه راهنما <MoveUpRight size={19} />
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+      <section className="v-final">
+        <div className="final-rings" aria-hidden="true" />
+        <div className="container">
+          <Reveal>
+            <span className="v-kicker">
+              ارتباط بهتر، از شناخت نیاز شروع می‌شود.
+            </span>
+            <h2>
+              برای تماس بعدی،
+              <br />
+              <span>آماده‌تر باشید.</span>
+            </h2>
+            <p>
+              نیازهای ارتباطی تیم‌تان را مشخص کنید.
+              <br />
+              قدم بعدی را با اطلاعات روشن بردارید.
+            </p>
+            <div className="v-actions">
+              <Link href="/contact/" className="v-button">
+                بررسی مسیر مشاوره <ArrowUpLeft size={21} />
+              </Link>
+              <Link href="/buy-cloud-phone/" className="v-button v-ghost">
+                راهنمای خرید <ArrowLeft size={18} />
+              </Link>
+            </div>
+            <small>
+              مسیر دریافت درخواست هنوز فعال نیست؛ فرم مشاوره نمایشی است.
+            </small>
+          </Reveal>
+        </div>
+      </section>
+    </div>
+  );
+}

@@ -3,6 +3,7 @@ import '@fontsource/vazirmatn/arabic-400.css';
 import '@fontsource/vazirmatn/arabic-500.css';
 import '@fontsource/vazirmatn/arabic-700.css';
 import './globals.css';
+import './redesign.css';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 export const metadata: Metadata = { metadataBase:new URL('https://buluttel.ir'), title:{default:'بلوتل | تلفن ابری و ارتباطات سازمانی',template:'%s | بلوتل'}, icons:{icon:'/icon.svg'}, robots:{index:true,follow:true} };
